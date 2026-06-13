@@ -21,7 +21,8 @@ export default function PesquisaForm() {
     'TS multimarcas',
     'Bom Jesus Veiculos',
     'Premiver Multimarcas',
-    'GP CAR'
+    'GP CAR',
+    'CAMPOS VEICULOS'
   ];
   const origens = [
     'Instagram', 
@@ -29,6 +30,8 @@ export default function PesquisaForm() {
     'Youtube', 
     'Carro de anúncios', 
     'Televisão',
+    'Telões',
+    'Rádio',
     'Outros'
   ];
 
