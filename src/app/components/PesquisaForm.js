@@ -22,7 +22,8 @@ export default function PesquisaForm() {
     'Bom Jesus Veiculos',
     'Premiver Multimarcas',
     'GP CAR',
-    'CAMPOS VEICULOS'
+    'CAMPOS VEICULOS',
+    'Expressão Veiculos'
   ];
   const origens = [
     'Instagram', 
