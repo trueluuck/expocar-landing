@@ -95,20 +95,19 @@ export default function Home() {
       </section>
 
       <section id="galeria" className={`${styles.section} container`}>
-        <h2 className={styles.sectionTitle}>Momentos da Última Edição</h2>
-        <p style={{ textAlign: 'center', color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto' }}>
-          Confira o que rolou no nosso último Mega Feirão. (Substitua estas imagens com as fotos reais de vendas e clientes)
+        <h2 className={styles.sectionTitle}>Nosso Instagram</h2>
+        <p style={{ textAlign: 'center', color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto 40px' }}>
+          Acompanhe nossas últimas postagens e novidades direto do nosso feed oficial.
         </p>
-        <div className={styles.galleryGrid}>
-          {[1, 2, 3, 4, 5, 6].map((item) => (
-            <div key={item} className={styles.galleryItem}>
-              <div className={styles.galleryPlaceholder}>
-                <div className={styles.galleryIcon}>📸</div>
-                <span>Adicione Foto {item} aqui</span>
-              </div>
-            </div>
-          ))}
+        
+        {/* === WIDGET DO INSTAGRAM AQUI === */}
+        <div style={{ minHeight: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '2px dashed var(--border-color)', borderRadius: '16px' }}>
+          <p style={{ color: 'var(--text-muted)' }}>
+            O Carrossel do Instagram vai aparecer aqui quando colarmos o código!
+          </p>
         </div>
+        {/* =============================== */}
+
       </section>
 
       <section id="lojas" className={`${styles.section} container`} style={{ backgroundColor: 'var(--bg-secondary)', borderRadius: '24px', padding: '60px', margin: '40px auto' }}>
