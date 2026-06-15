@@ -101,10 +101,10 @@ export default function Home() {
         </p>
         
         {/* === WIDGET DO INSTAGRAM AQUI === */}
-        <div style={{ minHeight: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '2px dashed var(--border-color)', borderRadius: '16px' }}>
-          <p style={{ color: 'var(--text-muted)' }}>
-            O Carrossel do Instagram vai aparecer aqui quando colarmos o código!
-          </p>
+        <div style={{ minHeight: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          {/* Elfsight Instagram Feed | Untitled Instagram Feed */}
+          <script src="https://elfsightcdn.com/platform.js" async></script>
+          <div className="elfsight-app-f486bfd1-fdf2-42c0-9c6d-bc3d49328f07" data-elfsight-app-lazy="true"></div>
         </div>
         {/* =============================== */}
 
