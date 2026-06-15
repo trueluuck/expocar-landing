@@ -40,8 +40,29 @@ export default function Home() {
             A Expocar Guarapuava reúne as melhores lojas da cidade para oferecer as maiores taxas de aprovação, os melhores veículos e condições imbatíveis.
           </p>
           <div className={styles.heroButtons}>
-            <a href="#sobre" className={styles.primaryButton}>Conheça o Evento</a>
-            <a href="#lojas" className={styles.secondaryButton}>Ver Lojas Parceiras</a>
+            <a href="#sobre" className={styles.primaryButton}>Conheça a História</a>
+            <a href="#galeria" className={styles.secondaryButton}>Ver Fotos do Evento</a>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.statsSection}>
+        <div className={`container ${styles.statsGrid}`}>
+          <div className={styles.statItem}>
+            <span className={styles.statNumber}>10+</span>
+            <span className={styles.statLabel}>Edições Realizadas</span>
+          </div>
+          <div className={styles.statItem}>
+            <span className={styles.statNumber}>10</span>
+            <span className={styles.statLabel}>Lojas Parceiras</span>
+          </div>
+          <div className={styles.statItem}>
+            <span className={styles.statNumber}>1000+</span>
+            <span className={styles.statLabel}>Carros Vendidos</span>
+          </div>
+          <div className={styles.statItem}>
+            <span className={styles.statNumber}>100%</span>
+            <span className={styles.statLabel}>Satisfação</span>
           </div>
         </div>
       </section>
@@ -73,11 +94,31 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="galeria" className={`${styles.section} container`}>
+        <h2 className={styles.sectionTitle}>Momentos da Última Edição</h2>
+        <p style={{ textAlign: 'center', color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto' }}>
+          Confira o que rolou no nosso último Mega Feirão. (Substitua estas imagens com as fotos reais de vendas e clientes)
+        </p>
+        <div className={styles.galleryGrid}>
+          {[1, 2, 3, 4, 5, 6].map((item) => (
+            <div key={item} className={styles.galleryItem}>
+              <div className={styles.galleryPlaceholder}>
+                <div className={styles.galleryIcon}>📸</div>
+                <span>Adicione Foto {item} aqui</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section id="lojas" className={`${styles.section} container`} style={{ backgroundColor: 'var(--bg-secondary)', borderRadius: '24px', padding: '60px', margin: '40px auto' }}>
         <h2 className={styles.sectionTitle} style={{ marginBottom: '40px' }}>Nossas Lojas Parceiras</h2>
         <div className={styles.lojasGrid}>
           {lojistas.map((loja, idx) => (
             <div key={idx} className={styles.lojaCard}>
+              <div className={styles.lojaLogoPlaceholder}>
+                Logo<br/>{loja}
+              </div>
               <div className={styles.lojaName}>{loja}</div>
             </div>
           ))}
