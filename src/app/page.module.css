@@ -80,9 +80,11 @@
 .subtitle {
   font-size: clamp(18px, 4vw, 24px);
   color: var(--text-muted);
-  max-width: 800px;
+  max-width: 100%;
+  width: 100%;
   margin: 0 auto 40px;
   line-height: 1.5;
+  padding: 0 20px;
 }
 
 .heroButtons {
@@ -165,10 +167,53 @@
   line-height: 1.6;
 }
 
-.lojasGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+/* Carousel Section */
+.carouselContainer {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  padding: 20px 0;
+  display: flex;
+}
+
+.carouselContainer::before,
+.carouselContainer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+}
+
+.carouselContainer::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-secondary) 0%, transparent 100%);
+}
+
+.carouselContainer::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-secondary) 0%, transparent 100%);
+}
+
+.carouselTrack {
+  display: flex;
   gap: 24px;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+
+.carouselTrack:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 12px)); /* -50% of track width minus half gap */
+  }
 }
 
 .lojaCard {

@@ -15,6 +15,9 @@ export default function Home() {
     'Expressão Veículos'
   ];
 
+  // Duplicando array para o efeito de scroll infinito sem quebras
+  const carouselLojistas = [...lojistas, ...lojistas];
+
   return (
     <main className={styles.main}>
       <header className={styles.header}>
@@ -23,8 +26,9 @@ export default function Home() {
             EXPO<span>CAR</span>
           </Link>
           <nav className={styles.navLinks}>
-            <a href="#sobre" className={styles.navLink}>Sobre</a>
+            <a href="#instagram" className={styles.navLink}>Nosso Instagram</a>
             <a href="#lojas" className={styles.navLink}>Lojas Parceiras</a>
+            <a href="#sobre" className={styles.navLink}>Sobre</a>
             <a href="https://www.instagram.com/expocarguarapuava042/" target="_blank" rel="noopener noreferrer" className={styles.navLink}>Instagram</a>
           </nav>
         </div>
@@ -32,7 +36,7 @@ export default function Home() {
 
       <section className={styles.hero}>
         <div className={styles.heroBackground}></div>
-        <div className="container animate-fade-in">
+        <div className="container animate-fade-in" style={{ width: '100%', maxWidth: '100%' }}>
           <h1 className={styles.title}>
             O Maior Mega Feirão <br/><span className="text-gradient">Automotivo da Região</span>
           </h1>
@@ -40,8 +44,8 @@ export default function Home() {
             A Expocar Guarapuava reúne as melhores lojas da cidade para oferecer as maiores taxas de aprovação, os melhores veículos e condições imbatíveis.
           </p>
           <div className={styles.heroButtons}>
-            <a href="#sobre" className={styles.primaryButton}>Conheça a História</a>
-            <a href="#galeria" className={styles.secondaryButton}>Ver Fotos do Evento</a>
+            <a href="#instagram" className={styles.primaryButton}>Ver Nossos Posts</a>
+            <a href="#sobre" className={styles.secondaryButton}>Conheça a História</a>
           </div>
         </div>
       </section>
@@ -67,6 +71,38 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="instagram" className={`${styles.section} container`}>
+        <h2 className={styles.sectionTitle}>Nosso Instagram</h2>
+        <p style={{ textAlign: 'center', color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto 40px' }}>
+          Acompanhe nossas últimas postagens e novidades direto do nosso feed oficial.
+        </p>
+        
+        {/* === WIDGET DO INSTAGRAM AQUI === */}
+        <div style={{ minHeight: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          {/* Elfsight Instagram Feed | Untitled Instagram Feed */}
+          <script src="https://elfsightcdn.com/platform.js" async></script>
+          <div className="elfsight-app-f486bfd1-fdf2-42c0-9c6d-bc3d49328f07" data-elfsight-app-lazy="true"></div>
+        </div>
+        {/* =============================== */}
+      </section>
+
+      <section id="lojas" className={styles.section} style={{ backgroundColor: 'var(--bg-secondary)', padding: '60px 0', margin: '40px 0' }}>
+        <h2 className={styles.sectionTitle} style={{ marginBottom: '40px' }}>Nossas Lojas Parceiras</h2>
+        
+        <div className={styles.carouselContainer}>
+          <div className={styles.carouselTrack}>
+            {carouselLojistas.map((loja, idx) => (
+              <div key={idx} className={styles.lojaCard} style={{ minWidth: '220px' }}>
+                <div className={styles.lojaLogoPlaceholder}>
+                  Logo<br/>{loja}
+                </div>
+                <div className={styles.lojaName}>{loja}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="sobre" className={`${styles.section} container`}>
         <h2 className={styles.sectionTitle}>A Força da Expocar</h2>
         <div className={styles.aboutGrid}>
@@ -81,46 +117,16 @@ export default function Home() {
             <div className={styles.aboutIcon}>🤝</div>
             <h3>As Melhores Lojas</h3>
             <p>
-              Reunimos as 10 maiores e mais respeitadas lojas de Guarapuava. Quando você compra na Expocar, sabe que está negociando com lojistas rigorosamente selecionados.
+              Reunimos as maiores e mais respeitadas lojas de Guarapuava. Quando você compra na Expocar, sabe que está negociando com lojistas rigorosamente selecionados.
             </p>
           </div>
           <div className={styles.aboutCard}>
             <div className={styles.aboutIcon}>💰</div>
             <h3>Condições Imbatíveis</h3>
             <p>
-              Graças à parceria com os maiores bancos e financeiras do Brasil, conseguimos oferecer taxas exclusivas de feirão, com aprovação na hora e condições que você não encontra nas lojas físicas.
+              Graças à parceria com os maiores bancos e financeiras do Brasil, conseguimos oferecer taxas exclusivas de feirão, com aprovação na hora e condições incríveis.
             </p>
           </div>
-        </div>
-      </section>
-
-      <section id="galeria" className={`${styles.section} container`}>
-        <h2 className={styles.sectionTitle}>Nosso Instagram</h2>
-        <p style={{ textAlign: 'center', color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto 40px' }}>
-          Acompanhe nossas últimas postagens e novidades direto do nosso feed oficial.
-        </p>
-        
-        {/* === WIDGET DO INSTAGRAM AQUI === */}
-        <div style={{ minHeight: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          {/* Elfsight Instagram Feed | Untitled Instagram Feed */}
-          <script src="https://elfsightcdn.com/platform.js" async></script>
-          <div className="elfsight-app-f486bfd1-fdf2-42c0-9c6d-bc3d49328f07" data-elfsight-app-lazy="true"></div>
-        </div>
-        {/* =============================== */}
-
-      </section>
-
-      <section id="lojas" className={`${styles.section} container`} style={{ backgroundColor: 'var(--bg-secondary)', borderRadius: '24px', padding: '60px', margin: '40px auto' }}>
-        <h2 className={styles.sectionTitle} style={{ marginBottom: '40px' }}>Nossas Lojas Parceiras</h2>
-        <div className={styles.lojasGrid}>
-          {lojistas.map((loja, idx) => (
-            <div key={idx} className={styles.lojaCard}>
-              <div className={styles.lojaLogoPlaceholder}>
-                Logo<br/>{loja}
-              </div>
-              <div className={styles.lojaName}>{loja}</div>
-            </div>
-          ))}
         </div>
       </section>
 
